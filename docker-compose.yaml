@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  flinker-jakob:
+    build:
+      context: .
+    image: jakons-mimosa:1.0.0
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    restart: always
+    volumes:
+      - ${DATABASE_LOCATION}:/database:rw
+      - ${IMAGE_LOCATION}:/images:rw
